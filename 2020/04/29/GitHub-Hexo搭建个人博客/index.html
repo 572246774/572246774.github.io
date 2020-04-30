@@ -231,7 +231,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2020-04-29
+      更新于:&nbsp;2020-04-30
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -295,8 +295,56 @@
 
   
   <div class="mdui-card-content mdui-typo mdui-p-x-4">
-    <meta name="referrer" content="no-referrer" />
+    <p>第一步：</p>
+<ul>
+<li>安装nodejs（推荐安装LTS） <a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></li>
+<li>安装git bash &lt;<a href="https://gitforwindows.org/" target="_blank" rel="noopener">https://gitforwindows.org/</a></li>
+<li>安装Hexo &lt;<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></li>
+</ul>
 <a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#git bash中执行</span></span><br><span class="line">$ npm install hexo-cli -g</span><br><span class="line"><span class="comment">#在本地电脑中新建一个用于存放blog的文件夹，在这个文件夹中执行</span></span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>常用的Hexo命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server //hexo s  简写（启动服务）</span><br><span class="line"></span><br><span class="line">$ hexo generate //hexo g 简写(静态资源打包)</span><br><span class="line"></span><br><span class="line">$ hexo deploy //hexo d 简写（打包并发布）</span><br><span class="line"></span><br><span class="line">$ hexo clean //清除打包文件</span><br></pre></td></tr></table></figure>
+
+<p>第二步：</p>
+<ul>
+<li>注册github账号<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></li>
+</ul>
+<p>创建github page <a href="https://help.github.com/en/github/working-with-github-pages/getting-started-with-github-pages" target="_blank" rel="noopener">https://help.github.com/en/github/working-with-github-pages/getting-started-with-github-pages</a></p>
+<p>配置github 的ssh key (目的：git bash 提交部署的时候免密)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#git bash中执行 邮件地址是github绑定的邮件</span></span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址"</span></span><br></pre></td></tr></table></figure>
+
+<p>打开C:\Users\Administrator.ssh\id_rsa.pub 将里面的内容复制到github中</p>
+<img src="/572246774.github.io/2020/04/29/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1588223820719.png" class="" title="ssh key配置图片">
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#测试是否配置成功</span></span><br><span class="line">$ ssh -T git@github.com </span><br><span class="line"><span class="comment">#返回如下即配置成功</span></span><br><span class="line"><span class="comment">#Hi XXXX! You've successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
+
+<p>配置git config</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"name"</span>// 你的github用户名，非昵称</span><br><span class="line">$ git config --global user.email  <span class="string">"xxx@qq.com"</span>// 填写你的github注册邮箱</span><br></pre></td></tr></table></figure>
+
+<p>第三步：</p>
+<ul>
+<li>配置Hexo目录下的_config.yml 详细配置请参考官网<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">https://hexo.io/docs/configuration.html</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 主要配置</span></span><br><span class="line">title: 博客主题</span><br><span class="line">author: 作者</span><br><span class="line">language: 语言</span><br><span class="line"></span><br><span class="line">url: https://572246774.github.io <span class="comment">#仓库地址</span></span><br><span class="line">root: /572246774.github.io/ <span class="comment">#仓库名</span></span><br><span class="line">permalink: :year/:month/:day/:title/ <span class="comment">#仓库名后面紧接的路径</span></span><br><span class="line"></span><br><span class="line">new_post_name: :year-:month-:day-:title.md <span class="comment"># File name of new posts</span></span><br><span class="line">theme: Meadow <span class="comment">#配置主题</span></span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  <span class="comment">#repo: https://github.com/572246774/572246774.github.io</span></span><br><span class="line">  <span class="comment">#example, https://github.com/hexojs/hexojs.github.io</span></span><br><span class="line">  repo: git@github.com:572246774/572246774.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line"><span class="comment">#配置搜索功能  </span></span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: <span class="literal">true</span></span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>配置Meadow主题下的_config.yml  详细配置参考Meadow官网<a href="https://garybear.cn/hexo-theme-meadow/#/zh-CN/" target="_blank" rel="noopener">https://garybear.cn/hexo-theme-meadow/#/zh-CN/</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下面是主要的配置</span></span><br><span class="line">avatar: /572246774.github.io/icons/liban.jpg <span class="comment">#关于的个人图片</span></span><br><span class="line"><span class="comment"># 搜索</span></span><br><span class="line">search:</span><br><span class="line">  <span class="built_in">local</span>: <span class="literal">true</span></span><br><span class="line">  path: /search.xml</span><br><span class="line">  placeholder: 请输入关键字</span><br><span class="line"></span><br><span class="line"><span class="comment">#####侧边栏#####</span></span><br><span class="line"><span class="comment"># 菜单</span></span><br><span class="line">menu:</span><br><span class="line">  home: / || icon-home</span><br><span class="line">  tags: /tags/ || icon-bookmark</span><br><span class="line">  categories: /categories/ || icon-folder</span><br><span class="line">  archives: /archives/ || icon-archive </span><br><span class="line">  tools: /tools/ || icon-tools <span class="comment">#改为tools，zh_CN文件中添加对应的中文</span></span><br><span class="line">  about: /about/ || icon-user</span><br><span class="line"></span><br><span class="line"><span class="comment"># 社交链接</span></span><br><span class="line">social:</span><br><span class="line">  邮  箱: mailto:572247774@qq.com || icon-mail</span><br><span class="line">  Q    Q: 572246774 || icon-qq</span><br><span class="line">  GitHub: https://github.com/572246774 || icon-github</span><br><span class="line">  微  信: 18378324114 || icon-wechat</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#####第三方服务#####</span></span><br><span class="line"><span class="comment"># 评论 这里只保留的gitalk其他的注释掉</span></span><br><span class="line">comment:</span><br><span class="line">  use: </span><br><span class="line">   - gitalk</span><br><span class="line">   <span class="comment"># - livere</span></span><br><span class="line">  <span class="comment">## Gitalk</span></span><br><span class="line">  gitalk_client_id: 29c9e7d45100c2009091</span><br><span class="line">  gitalk_client_secret: b732cfcee5313dce2d69dc9cdcf32f15945dfb2e</span><br><span class="line">  gitalk_repo: 572246774.github.io</span><br><span class="line">  gitalk_owner: 572246774 </span><br><span class="line">  <span class="comment">#gitalk_sid_type: git</span></span><br><span class="line">  gitalk_distractionFreeMode: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>第四步：</p>
+<ul>
+<li>写博客之前</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#分别执行</span></span><br><span class="line">$ hexo new page <span class="string">"tags"</span></span><br><span class="line">$ hexo new page <span class="string">"categories"</span></span><br><span class="line">$ hexo new page <span class="string">"tools"</span></span><br><span class="line">$ hexo new page <span class="string">"about"</span></span><br><span class="line"><span class="comment">#然后在Hexo下source文件夹对应的目录中修改index.md</span></span><br><span class="line"><span class="comment">#例子</span></span><br><span class="line">title: All Tags</span><br><span class="line">date: 2020-02-02 20:00:02</span><br><span class="line"><span class="built_in">type</span>: <span class="string">"tags"</span> <span class="comment">#指定类型，也就是菜单，对应上面new page</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>开始写博客</li>
+</ul>
+<p>到这里就可以开始编写文章了，编写完成后Hexo g -d打包部署，浏览器 <a href="https://572246774.github.io">https://572246774.github.io</a> 输入仓库地址即可成功访问。</p>
+<p>有任何问题请留言！</p>
 
   </div>
   <!--文末结束语-->
@@ -314,11 +362,6 @@
         <span>Github+Hexo搭建个人博客常见问题解决方案</span>
       </a>
     
-    
-      <a rel="next" class="post-nav-item mdui-float-right" href="/572246774.github.io/2020/04/28/%E6%B5%8B%E8%AF%95/">
-        <span>测试</span>
-        <i class="iconfont icon-angle-right"></i>
-      </a>
     
   </nav>
 </article>
