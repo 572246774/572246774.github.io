@@ -53,7 +53,8 @@
 <li>开始写博客</li>
 </ul>
 <p>到这里就可以开始编写文章了，编写完成后Hexo g -d打包部署，浏览器 <a href="https://572246774.github.io">https://572246774.github.io</a> 输入仓库地址即可成功访问。</p>
-<p>有任何问题请留言！</p>
+<p>搭建过程问题解解决方案可在右上角搜索：Hexo搭建个人博客常见问题</p>
+<p>有任何问题请留言！ </p>
 ]]></content>
       <categories>
         <category>个人博客搭建</category>
@@ -113,6 +114,24 @@
       </categories>
       <tags>
         <tag>个人博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NIONJAVA-NIO的基础知识</title>
+    <url>/572246774.github.io/2020/04/30/NIONJAVA-NIO%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<p>什么是NIO？新IO（New IO，简称NIO）。</p>
+<p>为什么出现NIO（jdk1.4开始新增）?</p>
+<p>1、传统IO都是阻塞式。</p>
+<p>2、传统IO都是通过字节的移动（传统的IO模型）来处理的（即使不直接去处理字节流，但底层的实现还是依赖于字节处理），面向流的输入/输出系统通常效率不高。</p>
+<a id="more"></a>
+
+<p>有任何问题请留言！</p>
+]]></content>
+      <categories>
+        <category>JAVA基础</category>
+      </categories>
+      <tags>
+        <tag>JAVA基础</tag>
       </tags>
   </entry>
 </search>
