@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Github+Hexo搭建个人博客常见问题解决方案</title>
+    <url>/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<p>常见问题解决方案：</p>
+<h4 id="1、未找到相关得Issues进行评论"><a href="#1、未找到相关得Issues进行评论" class="headerlink" title="1、未找到相关得Issues进行评论"></a>1、未找到相关得Issues进行评论</h4><p>解决方案：点击蓝色按钮，使用GitHub登录，登录成功即可。</p>
+<a id="more"></a>
+
+<img src="/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/20200429154809.png" class="" title="[60%][30%] 未找到相关得Issues进行评论">
+
+<p>如果登录成功后直接跳转到GitHub中，则需要检查GitHub设置，如下：</p>
+<p>​    Settings &gt; Developer setting &gt; OAuth Apps</p>
+<img src="/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/1588147091210.png" class="" title="Settings &gt; Developer setting &gt; OAuth Apps">
+
+<p>注意上面图片中的callback URL即可，如果有个人域名就填写个人域名地址，没有填homepage URL</p>
+<h3 id="2、加载评论显示Error-Not-Found"><a href="#2、加载评论显示Error-Not-Found" class="headerlink" title="2、加载评论显示Error:Not Found"></a>2、加载评论显示Error:Not Found</h3><img src="/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/20200429160819.png" class="" title="Error:Not Found">
+
+<p>​    1）检查properties的settings中的Issue是否勾选</p>
+<img src="/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/20200429161128.png" class="" title="settings">
+
+<p>​    2）检查OAuth application是否已经配置</p>
+<p>​    配置地址：<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">https://github.com/settings/applications/new</a></p>
+<img src="/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/20200429161442.png" class="" title="OAuth application">
+
+<p>​    3）检查OAuth application与_config.yml中的设置是否一致,如下（基于Meadow主题的配置）：</p>
+<img src="/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/20200429161726.png" class="" title="_config.yml">
+
+<p>gittalk的详细配置与使用地址：<a href="https://github.com/gitalk/gitalk#options" target="_blank" rel="noopener">https://github.com/gitalk/gitalk#options</a></p>
+<h4 id="3、如何为文章插入图片"><a href="#3、如何为文章插入图片" class="headerlink" title="3、如何为文章插入图片"></a>3、如何为文章插入图片</h4><p>方式1：</p>
+<p>​    1）设置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+
+<p>​    2）hexo new post “title” ，新增文章的时候会在同级目录下生成与title相同的目录，将图片放到该目录下，然后再md文件中引用即可。</p>
+<p>引用格式如下，这样引用再md中是看不到图片效果的，但是部署之后能正常显示图片：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Hexo官网文档：<a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/asset-folders</a></p>
+<p>方式2：</p>
+<p>这个方式可以在md编写文章是显示图片</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-simple-image --save</span><br><span class="line">&#x2F;&#x2F;configure it in _config.yml</span><br><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+
+<p>可参考：<a href="https://github.com/Aragakiiii/hexo-simple-image" target="_blank" rel="noopener">https://github.com/Aragakiiii/hexo-simple-image</a></p>
+<h4 id="4、md控制图片大小"><a href="#4、md控制图片大小" class="headerlink" title="4、md控制图片大小"></a>4、md控制图片大小</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% img [class names] /path/to/image [width] [height] '"title text" "alt text"' %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Hexo官网文档：<a href="https://hexo.io/zh-cn/docs/tag-plugins" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/tag-plugins</a></p>
+<p>更多问题请留言</p>
+]]></content>
+      <categories>
+        <category>个人博客搭建</category>
+      </categories>
+      <tags>
+        <tag>个人博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GitHub+Hexo搭建个人博客</title>
     <url>/572246774.github.io/2020/04/29/GitHub-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>第一步：</p>
@@ -79,59 +132,6 @@
       </categories>
       <tags>
         <tag>JAVA基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Github+Hexo搭建个人博客常见问题解决方案</title>
-    <url>/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<p>常见问题解决方案：</p>
-<h4 id="1、未找到相关得Issues进行评论"><a href="#1、未找到相关得Issues进行评论" class="headerlink" title="1、未找到相关得Issues进行评论"></a>1、未找到相关得Issues进行评论</h4><p>解决方案：点击蓝色按钮，使用GitHub登录，登录成功即可。</p>
-<a id="more"></a>
-
-<img src="/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/20200429154809.png" class="" title="[60%][30%] 未找到相关得Issues进行评论">
-
-<p>如果登录成功后直接跳转到GitHub中，则需要检查GitHub设置，如下：</p>
-<p>​    Settings &gt; Developer setting &gt; OAuth Apps</p>
-<img src="/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/1588147091210.png" class="" title="Settings &gt; Developer setting &gt; OAuth Apps">
-
-<p>注意上面图片中的callback URL即可，如果有个人域名就填写个人域名地址，没有填homepage URL</p>
-<h3 id="2、加载评论显示Error-Not-Found"><a href="#2、加载评论显示Error-Not-Found" class="headerlink" title="2、加载评论显示Error:Not Found"></a>2、加载评论显示Error:Not Found</h3><img src="/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/20200429160819.png" class="" title="Error:Not Found">
-
-<p>​    1）检查properties的settings中的Issue是否勾选</p>
-<img src="/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/20200429161128.png" class="" title="settings">
-
-<p>​    2）检查OAuth application是否已经配置</p>
-<p>​    配置地址：<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">https://github.com/settings/applications/new</a></p>
-<img src="/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/20200429161442.png" class="" title="OAuth application">
-
-<p>​    3）检查OAuth application与_config.yml中的设置是否一致,如下（基于Meadow主题的配置）：</p>
-<img src="/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/20200429161726.png" class="" title="_config.yml">
-
-<p>gittalk的详细配置与使用地址：<a href="https://github.com/gitalk/gitalk#options" target="_blank" rel="noopener">https://github.com/gitalk/gitalk#options</a></p>
-<h4 id="3、如何为文章插入图片"><a href="#3、如何为文章插入图片" class="headerlink" title="3、如何为文章插入图片"></a>3、如何为文章插入图片</h4><p>方式1：</p>
-<p>​    1）设置</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
-
-<p>​    2）hexo new post “title” ，新增文章的时候会在同级目录下生成与title相同的目录，将图片放到该目录下，然后再md文件中引用即可。</p>
-<p>引用格式如下，这样引用再md中是看不到图片效果的，但是部署之后能正常显示图片：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Hexo官网文档：<a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/asset-folders</a></p>
-<p>方式2：</p>
-<p>这个方式可以在md编写文章是显示图片</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-simple-image --save</span><br><span class="line">&#x2F;&#x2F;configure it in _config.yml</span><br><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
-
-<p>可参考：<a href="https://github.com/Aragakiiii/hexo-simple-image" target="_blank" rel="noopener">https://github.com/Aragakiiii/hexo-simple-image</a></p>
-<h4 id="4、md控制图片大小"><a href="#4、md控制图片大小" class="headerlink" title="4、md控制图片大小"></a>4、md控制图片大小</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% img [class names] /path/to/image [width] [height] '"title text" "alt text"' %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Hexo官网文档：<a href="https://hexo.io/zh-cn/docs/tag-plugins" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/tag-plugins</a></p>
-<p>更多问题请留言</p>
-]]></content>
-      <categories>
-        <category>个人博客搭建</category>
-      </categories>
-      <tags>
-        <tag>个人博客搭建</tag>
       </tags>
   </entry>
 </search>
