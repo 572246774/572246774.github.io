@@ -64,6 +64,24 @@
       </tags>
   </entry>
   <entry>
+    <title>NIONJAVA-NIO的基础知识</title>
+    <url>/572246774.github.io/2020/04/30/NIONJAVA-NIO%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<p>什么是NIO？新IO（New IO，简称NIO）。</p>
+<p>为什么出现NIO（jdk1.4开始新增）?</p>
+<p>1、传统IO都是阻塞式。</p>
+<p>2、传统IO都是通过字节的移动（传统的IO模型）来处理的（即使不直接去处理字节流，但底层的实现还是依赖于字节处理），面向流的输入/输出系统通常效率不高。</p>
+<a id="more"></a>
+
+<p>有任何问题请留言！</p>
+]]></content>
+      <categories>
+        <category>JAVA基础</category>
+      </categories>
+      <tags>
+        <tag>JAVA基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Github+Hexo搭建个人博客常见问题解决方案</title>
     <url>/572246774.github.io/2020/04/29/Github-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[<p>常见问题解决方案：</p>
@@ -114,24 +132,6 @@
       </categories>
       <tags>
         <tag>个人博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NIONJAVA-NIO的基础知识</title>
-    <url>/572246774.github.io/2020/04/30/NIONJAVA-NIO%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<p>什么是NIO？新IO（New IO，简称NIO）。</p>
-<p>为什么出现NIO（jdk1.4开始新增）?</p>
-<p>1、传统IO都是阻塞式。</p>
-<p>2、传统IO都是通过字节的移动（传统的IO模型）来处理的（即使不直接去处理字节流，但底层的实现还是依赖于字节处理），面向流的输入/输出系统通常效率不高。</p>
-<a id="more"></a>
-
-<p>有任何问题请留言！</p>
-]]></content>
-      <categories>
-        <category>JAVA基础</category>
-      </categories>
-      <tags>
-        <tag>JAVA基础</tag>
       </tags>
   </entry>
 </search>
